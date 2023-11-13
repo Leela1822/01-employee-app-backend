@@ -25,10 +25,22 @@ public class EmployeeController {
         employeeService.addNewEmployee(employee);
     }
 
-    @DeleteMapping(path={"/{id}"})
+    @GetMapping(path = "/{id}")
+    public Employee getEmployeeById(@PathVariable("id") Long employeeID){
+        return employeeService.getEmployeeDataById(employeeID);
+    }
+
+    @PutMapping(path = {"/{id}"})
+    public void putEmployee(@PathVariable("id") Long employeeID,
+                    @RequestBody Employee employeeFromUser)
+    {
+        employeeService.updateExistingEmployee(employeeID, employeeFromUser);
+    }
+
+
+    @DeleteMapping(path = {"/{id}"})
     public void deleteEmployee(@PathVariable("id") Long employeeID)
     {
         employeeService.deleteExistingEmployee(employeeID);
-        System.out.println(employeeID);
     }
 }
