@@ -68,7 +68,7 @@ public class EmployeeService {
 
             if (employeeOptional.isPresent())
             {
-                throw new IllegalStateException("There is an existing account with this email.");
+                throw new ResponseStatusException(HttpStatusCode.valueOf(419),"There is an existing account with this email.");
             }
 
             matchingEmployee.setEmployeeEmail(updatedEmployeeEmail);

@@ -27,8 +27,20 @@ public class EmployeeConfig {
                     "qwer@company.com"
             );
 
+            Employee john = new Employee(
+                    "John",
+                    LocalDate.of(1990, Month.MAY,21),
+                    "john@company.com"
+            );
+
+            Employee jack = new Employee(
+                    "Jack",
+                    LocalDate.of(1985, Month.MAY,21),
+                    "jack@company.com"
+            );
+
             employeeRepository.saveAll(
-                    List.of(abc, qwer)
+                    List.of(abc, qwer, john, jack)
             );
         };
     }
