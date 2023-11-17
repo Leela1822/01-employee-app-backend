@@ -16,7 +16,7 @@ public class EmployeeConfig {
     {
         return args -> {
             Employee abc = new Employee(
-                    "Abc",
+                    "Allen",
                     LocalDate.of(2000, Month.JANUARY,2),
                     "abc@company.com"
             );
@@ -40,7 +40,7 @@ public class EmployeeConfig {
             );
 
             employeeRepository.saveAll(
-                    List.of(abc, qwer, john, jack)
+                    List.of(allen, qwer, john, jack)
             );
         };
     }
